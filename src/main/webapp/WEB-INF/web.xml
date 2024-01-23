@@ -10,6 +10,10 @@
         <servlet-class>org.springframework.ws.transport.http.MessageDispatcherServlet</servlet-class>
 
         <!--        set up transform wsdl location param   -->
+        <init-param>
+            <param-name>transformWsdlLocations</param-name>
+            <param-value>true</param-value>
+        </init-param>
 
     </servlet>
 
