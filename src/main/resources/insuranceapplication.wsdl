@@ -1,0 +1,50 @@
+<wsdl:definitions
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:schema="http://www.arturfrimu.com/schemas"
+        xmlns:tns="http://www.arturfrimu.com/definitions"
+        targetNamespace="http://www.arturfrimu.com/definitions">
+
+    <wsdl:types>
+        <!--        We import the schema defined in Data Contract -->
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://www.arturfrimu.com/schemas" schemaLocation="insuranceapplication.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <!--        We define the InsuranceApplication message, which gets used in the partType -->
+    <wsdl:message name="InsuranceApplication">
+        <!--        The InsuranceApplication type is defined in the schema -->
+        <wsdl:part name="InsuranceApplication" element="schema:InsuranceApplication"/>
+    </wsdl:message>
+
+    <!-- We define the InsuranceApplication port type, which gets used in the binding  -->
+    <wsdl:portType name="InsuranceApplication">
+        <wsdl:operation name="Insurance">
+            <wsdl:input message="tns:InsuranceApplication" name="InsuranceApplication"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!--    We define the InsuranceApplicationBinding, which gets used in the port-->
+    <wsdl:binding name="InsuranceApplicationBinding" type="tns:InsuranceApplication">
+        <!--        We use a document/literal style-->
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <!--        The literal http://schemas.xmlsoap.org/soap/http signifies a HTTP transport -->
+        <wsdl:operation name="Insurance">
+            <!--            The soapAction attribute signifies the SOAPAction HTTP header that will be sent with every request -->
+            <soap:operation soapAction="http://arturfrimu.com/ApplicationInsurance"/>
+            <wsdl:input name="InsuranceApplication">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="InsuranceApplicationService">
+        <wsdl:port binding="tns:InsuranceApplicationBinding" name="InsuranceApplicationPort">
+<!--            The http://localhost:8080/insuranceApplicationService/  address is the URL where the Web service can be invoked. -->
+            <soap:address location="http://localhost:8080/insuranceApplicationService/"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
