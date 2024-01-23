@@ -42,8 +42,8 @@
 
     <wsdl:service name="InsuranceApplicationService">
         <wsdl:port binding="tns:InsuranceApplicationBinding" name="InsuranceApplicationPort">
-<!--            The http://localhost:8080/insuranceApplicationService/  address is the URL where the Web service can be invoked. -->
-            <soap:address location="http://localhost:8080/insuranceApplicationService/"/>
+<!--            The http://localhost:8081/insuranceApplicationService/  address is the URL where the Web service can be invoked. -->
+            <soap:address location="http://localhost:8081/insuranceApplicationService/"/>
         </wsdl:port>
     </wsdl:service>
 
