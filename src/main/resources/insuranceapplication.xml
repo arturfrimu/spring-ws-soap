@@ -1,0 +1,21 @@
+<InsuranceApplication xmlns="http://www.arturfrimu.com/schemas">
+
+    <Applicant>
+        <SSN>42</SSN>
+        <FirstName>John</FirstName>
+        <MiddleName></MiddleName>
+        <LastName>Doe</LastName>
+    </Applicant>
+
+    <InsuranceInfo>
+        <product>Widget Gold Insurance</product>
+        <coverageType>Widget Protector</coverageType>
+        <coverageOption>Widget Value</coverageOption>
+    </InsuranceInfo>
+
+    <WidgetInfo>
+        <wgtAmount>5000.00</wgtAmount>
+        <wgtContractNumber>300100000234</wgtContractNumber>
+    </WidgetInfo>
+
+</InsuranceApplication>
