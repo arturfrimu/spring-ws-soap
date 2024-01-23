@@ -33,6 +33,28 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
             </plugin>
+<!--             Keep your existing JAXB plugin -->
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.14.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>src/main/webapp/WEB-INF/xsd</schemaDirectory>
+                </configuration>
+            </plugin>
+            <!-- Updated Maven WAR plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version> <!-- updated to a more recent version that's still compatible with Java 1.8 -->
+            </plugin>
         </plugins>
     </build>
 </project>
