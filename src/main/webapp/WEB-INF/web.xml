@@ -8,6 +8,9 @@
     <servlet>
         <servlet-name>spring-ws</servlet-name>
         <servlet-class>org.springframework.ws.transport.http.MessageDispatcherServlet</servlet-class>
+
+        <!--        set up transform wsdl location param   -->
+
     </servlet>
 
     <servlet-mapping>

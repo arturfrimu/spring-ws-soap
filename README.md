@@ -1,6 +1,6 @@
 [SOAP Web Service with Spring-WS Tutorial](https://www.youtube.com/playlist?list=PLPnaArAh2-4RDjqGHvu94EGLd_JoKWUqh)
 
-### pom.xml
+# [pom.xml](pom.xml)
 
 ```xml
     <dependencies>
@@ -31,3 +31,5 @@
         </plugins>
     </build>
 ```
+
+# [spring-ws-servlet.xml](src/main/webapp/WEB-INF/spring-ws-servlet.xml)
