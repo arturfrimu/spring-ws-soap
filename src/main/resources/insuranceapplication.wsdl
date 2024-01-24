@@ -71,7 +71,7 @@
     </wsdl:binding>
     <wsdl:service name="InsuranceApplicationServicePort">
         <wsdl:port binding="tns:InsuranceApplicationBinding" name="InsuranceApplicationBinding">
-            <soap:address location="http://localhost:8081/spring-ws"/>
+            <soap:address location="http://localhost:8081"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
